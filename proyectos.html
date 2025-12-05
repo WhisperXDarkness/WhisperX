@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos - David Alejandro Cruz Hernández</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts para tipografía -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #000000; /* Negro puro */
+            color: #ffffff; /* Blanco para texto */
+            min-height: 100vh;
+        }
+        .hero {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); /* Negro a gris oscuro */
+            color: #ffffff; /* Texto blanco */
+            padding: 3rem 0;
+            text-align: center;
+            position: relative; /* Para posicionar el video */
+            overflow: hidden; /* Evita que el video se salga */
+        }
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cubre toda el área sin distorsionar */
+            z-index: 1;
+            opacity: 0.3; /* Ajusta la opacidad para que no interfiera con el texto */
+        }
+        .hero .container {
+            position: relative;
+            z-index: 2; /* Asegura que el contenido esté encima del video */
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas para acomodar 3 arriba y 3 abajo */
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        .project-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255,255,255,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(255,255,255,0.2);
+        }
+        .project-item img {
+            width: 100%;
+            height: 350px; /* Altura aumentada para mejor visibilidad */
+            object-fit: cover;
+            display: block;
+            cursor: pointer; /* Para indicar que es clicable */
+        }
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            padding: 1rem;
+            text-align: center;
+        }
+        .project-item:hover .project-overlay {
+            opacity: 1;
+        }
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .project-description {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .btn-custom {
+            background-color: #ffffff; /* Blanco */
+            border: 2px solid #000000; /* Borde negro */
+            color: #000000; /* Texto negro */
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .btn-custom:hover {
+            background-color: #000000; /* Negro en hover */
+            color: #ffffff; /* Texto blanco */
+        }
+        footer {
+            background-color: #000000; /* Negro */
+            color: #ffffff; /* Blanco */
+            padding: 1rem;
+            text-align: center;
+        }
+        /* Animación de fade-in al scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Estilo para modal */
+        .modal-content {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        .modal-body img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Hero Section -->
+    <section class="hero">
+        <video autoplay muted loop>
+            <source src="docs/Ban.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento video.
+        </video>
+        <div class="container">
+            <h1 class="display-4">Mis Proyectos</h1>
+            <p class="lead">Explora mis trabajos en diseño y multimedia.</p>
+            <a href="index.html" class="btn btn-custom btn-lg">Volver al Inicio</a> <!-- Botón para volver -->
+        </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos" class="py-5 fade-in">
+        <div class="container">
+            <h2 class="text-center mb-4"><i class="fas fa-briefcase"></i> Proyectos</h2>
+            <div class="project-grid">
+                <!-- Proyecto 1: X-Graphics Card -->
+                <div class="project-item">
+                    <img src="docs/14c7e3236326567.69051091f3b30.gif" alt="Proyecto Marca 1">
+                    <div class="project-overlay">
+                        <h3 class="project-title">X-Graphics Card (Marca Ficticia)</h3>
+                        <p class="project-description">X-Graphics Card es una marca ficticia enfocada en la tecnologia como lo son las computadoras. En esta marca me enfoco en el diseño de logo y en la creacion de mockups, experimentando con lo estilos y diseños que puedan comunicar y trasmitir los valores de una marca profesional.</p>
+                        <a href="https://www.behance.net/gallery/236326567/Manual-de-Identidad-de-Marca-(Ficticia)" class="btn-custom">Ver Más</a>
+                    </div>
+                </div>
+                <!-- Proyecto 2 -->
+                <div class="project-item">
+                    <img src="docs/Logo blazing.gif" alt="Proyecto 2">
+                    <div class="project-overlay">
+                        <h3 class="project-title">Blazing</h3>
+                        <p class="project-description">Diseño de identidad visual. Playeras personalizadas, la idea del producto es dar una imagen fresca en el estilo de vestir
+de una persona. Fusiona la creatividad por los dibujos e ilustraciones como tambien el
+dinamismo, ofreciendo prendas únicas con sus estilos únicos y llenas de vida, para que los
+portes a tu gusto y a tu estilo. </p>
+                        <a href="https://www.behance.net/gallery/239887793/Blazyn-%28Marca-Ficticia%29" class="btn-custom">Ver Más</a>
+                    </div>
+                </div>
+                <!-- Proyecto 3 -->
+                <div class="project-item">
+                    <img src="docs/asz.jpg" alt="Proyecto 3">
+                    <div class="project-overlay">
+                        <h3 class="project-title">Urban Art Illustration</h3>
+                        <p class="project-description">Serie de ilustraciones digitales inspiradas en el arte urbano, explorando temas de ciudad y cultura moderna con técnicas mixtas.</p>
+                        <a href="https://drive.google.com/drive/folders/1UipS5uvSHH1-7-vSYz9vDOi8cil6PLVE?usp=sharing" class="btn-custom">Ver Más</a>
+                    </div>
+                </div>
+                <!-- Proyecto 4: Imagen clicable con modal -->
+                <div class="project-item">
+                    <img src="docs/PI2_Fotomontaje_HARDYPARTY_David_Cruz.png" alt="Proyecto 4" data-bs-toggle="modal" data-bs-target="#modalProyecto4">
+                </div>
+                <!-- Proyecto 5: Imagen clicable con modal -->
+                <div class="project-item">
+                    <img src="docs/Publi.jpg" alt="Proyecto 5" data-bs-toggle="modal" data-bs-target="#modalProyecto5">
+                </div>
+                <!-- Proyecto 6: Imagen clicable con modal -->
+                <div class="project-item">
+                    <img src="docs/pu.jpg" alt="Proyecto 6" data-bs-toggle="modal" data-bs-target="#modalProyecto6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modales para previsualización -->
+    <!-- Modal Proyecto 4 -->
+    <div class="modal fade" id="modalProyecto4" tabindex="-1" aria-labelledby="modalProyecto4Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProyecto4Label">Hardy Party</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="docs/PI2_Fotomontaje_HARDYPARTY_David_Cruz.png" alt="Proyecto 4">
+                    <p>Foto montaje creado en Photoshop, estilo cromo, sobre un luchador de la WWE Jeff Hardy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Proyecto 5 -->
+    <div class="modal fade" id="modalProyecto5" tabindex="-1" aria-labelledby="modalProyecto5Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProyecto5Label">Chicken Burger</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="docs/Publi.jpg" alt="Proyecto 5">
+                    <p>Publicidad promocional para un restaurante de comida rapida de hamburguesas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Proyecto 6 -->
+    <div class="modal fade" id="modalProyecto6" tabindex="-1" aria-labelledby="modalProyecto6Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProyecto6Label">Xbox Series</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="docs/pu.jpg" alt="Proyecto 6">
+                    <p>Publicidad promocional a una marca de videjuegos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 David Alejandro Cruz Hernández. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS para animaciones de scroll -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

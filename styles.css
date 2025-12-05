@@ -1,0 +1,112 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000000; /* Negro puro */
+    color: #ffffff; /* Blanco para texto */
+    min-height: 100vh;
+    line-height: 1.5; /* Espaciado de líneas aumentado para que no esté muy pegado */
+}
+.hero {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); /* Negro a gris oscuro */
+    color: #ffffff; /* Texto blanco */
+    padding: 5rem 0;
+    text-align: center;
+    position: relative; /* Para posicionar el video */
+    overflow: hidden; /* Evita que el video se salga */
+}
+.hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cubre toda el área sin distorsionar */
+    z-index: 1;
+    opacity: 0.3; /* Ajusta la opacidad para que no interfiera con el texto */
+}
+.hero .container {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté encima del video */
+}
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #ffffff; /* Borde blanco */
+    box-shadow: 0 4px 8px rgba(255,255,255,0.1); /* Sombra blanca sutil */
+}
+.card {
+    border: 1px solid #ffffff; /* Borde blanco fino */
+    box-shadow: 0 4px 8px rgba(255,255,255,0.1);
+    transition: transform 0.3s;
+    background-color: #2d2d2d; /* Gris oscuro para cards */
+    color: #ffffff; /* Texto blanco */
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(255,255,255,0.2); /* Sombra más fuerte en hover */
+}
+.card h5 {
+    margin-bottom: 1.5rem; /* Separación adicional entre el título y el contenido */
+    font-weight: bold; /* Resaltado con negritas */
+}
+.progress-bar {
+    background-color: #0aaffc; /* Azul claro para barras (como en el original) */
+}
+.btn-custom {
+    background-color: #ffffff; /* Blanco */
+    border: 2px solid #000000; /* Borde negro */
+    color: #000000; /* Texto negro */
+}
+.btn-custom:hover {
+    background-color: #000000; /* Negro en hover */
+    color: #ffffff; /* Texto blanco */
+}
+footer {
+    background-color: #000000; /* Negro */
+    color: #ffffff; /* Blanco */
+    padding: 1rem;
+    text-align: center;
+}
+/* Animación de fade-in al scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s, transform 0.6s;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Ajustes para navegación */
+.navbar-nav .nav-link {
+    color: #ffffff !important; /* Blanco para links */
+}
+.navbar-nav .nav-link:hover {
+    color: #cccccc !important; /* Gris claro en hover */
+}
+/* Scroll suave para navegación */
+html {
+    scroll-behavior: smooth;
+}
+/* Estilo para imágenes en secciones - Ajustado para hacerlas más pequeñas */
+.section-img {
+    max-width: 400px; /* Limita el ancho máximo para hacerlas más pequeñas */
+    width: 100%; /* Mantiene responsividad */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255,255,255,0.1);
+    margin: 0 auto; /* Centra la imagen */
+}
+/* Justificar texto en perfil profesional - Aumentado line-height a 2.0 */
+.justify-text {
+    text-align: justify;
+    line-height: 2.0; /* Espaciado mayor solo para el texto de perfil profesional */
+}
+/* Estilo para sección de contacto */
+.contact-item {
+    margin-bottom: 0.5rem;
+}
+.contact-item i {
+    margin-right: 0.5rem;
+    color: #0aaffc; /* Azul claro para íconos */
+}
